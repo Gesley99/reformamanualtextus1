@@ -244,6 +244,18 @@ const Contact = () => {
                 <p className="text-muted-foreground">
                   Resposta em até 1 dia útil. Para urgências, fale conosco pelo WhatsApp.
                 </p>
+
+                {/* === Botão de WhatsApp (logo abaixo do texto) === */}
+                <div className="mt-4">
+                  <Button
+                    variant="hero"
+                    className="w-full"
+                    onClick={() => window.open("https://wa.me/61996212692", "_blank")}
+                  >
+                    Falar no WhatsApp
+                  </Button>
+                </div>
+                {/* === fim do botão === */}
               </CardContent>
             </Card>
           </div>
