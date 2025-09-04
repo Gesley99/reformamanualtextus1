@@ -1,39 +1,29 @@
-import { CheckCircle, Mail, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Link } from "react-router-dom";
+import { CheckCircle2 } from "lucide-react";
 
 const Obrigado = () => {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-6">
-      <Card className="max-w-md w-full shadow-elegant">
-        <CardContent className="p-8 text-center space-y-6">
-          <div className="w-16 h-16 gradient-primary rounded-full flex items-center justify-center mx-auto">
-            <CheckCircle className="w-8 h-8 text-primary-foreground" />
-          </div>
-          
-          <div className="space-y-2">
-            <h1 className="text-2xl font-playfair font-bold text-foreground">
-              Obrigado!
-            </h1>
-            <p className="text-muted-foreground">
-              Recebemos sua solicitação. Em breve entraremos em contato pelo e-mail informado.
-            </p>
-          </div>
+    <div className="min-h-screen flex items-center justify-center bg-background px-6">
+      <div className="max-w-xl w-full text-center bg-card border border-border rounded-2xl p-10 shadow-elegant">
+        <div className="flex justify-center mb-4">
+          <CheckCircle2 className="w-14 h-14 text-secondary" />
+        </div>
+        <h1 className="text-3xl md:text-4xl font-playfair font-bold text-foreground mb-3">
+          Obrigado! Formulário enviado com sucesso.
+        </h1>
+        <p className="text-muted-foreground mb-8">
+          Entraremos em contato em breve.
+        </p>
 
-          <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 p-3 rounded-lg">
-            <Mail className="w-4 h-4" />
-            <span>Verifique sua caixa de entrada</span>
-          </div>
-
-          <Button asChild className="w-full">
-            <Link to="/">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Voltar ao início
-            </Link>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <Button variant="hero" onClick={() => window.open("/", "_self")}>
+            Voltar ao site
           </Button>
-        </CardContent>
-      </Card>
+          <Button variant="cta" onClick={() => window.open("https://wa.me/61996212692", "_blank")}>
+            Falar no WhatsApp
+          </Button>
+        </div>
+      </div>
     </div>
   );
 };
