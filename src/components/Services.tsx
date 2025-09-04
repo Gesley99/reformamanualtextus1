@@ -1,7 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { BookOpen, FileText, GraduationCap, Users, Clock, CheckCircle } from "lucide-react";
-import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { CheckCircle, BookOpen, FileText, GraduationCap, Users, Clock } from "lucide-react";
 
 const services = [
   {
@@ -59,7 +57,7 @@ const Services = () => {
         
         {/* Services Grid */}
         <div className="academic-grid max-w-6xl mx-auto">
-          {services.map((service, index) => {
+          {services.map((service) => {
             const Icon = service.icon;
             return (
               <Card key={service.title} className="shadow-card hover:shadow-elegant transition-smooth group hover:scale-105">
@@ -81,81 +79,6 @@ const Services = () => {
                       <span className="text-foreground">{feature}</span>
                     </div>
                   ))}
-                  
-
-<div className="pt-4">
-  {service.title === "Projetos de Extensão" ? (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="hero" className="w-full">Saiba Mais</Button>
-      </DialogTrigger>
-      <DialogContent className="max-w-xl">
-        <DialogHeader>
-          <DialogTitle>Projetos de Extensão — Como funciona</DialogTitle>
-          <DialogDescription></DialogDescription>
-        </DialogHeader>
-        <div className="space-y-6 text-foreground">
-          <div>
-            <h4 className="font-semibold mb-2">O que fazemos</h4>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Estruturamos o projeto conforme as diretrizes acadêmicas.</li>
-              <li>Elaboramos cronograma, metodologia e relatórios.</li>
-              <li>Orientamos sobre instrumentos de coleta de dados.</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-2">O que não fazemos</h4>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Não coletamos fotos, dados pessoais ou entrevistas.</li>
-              <li>Não executamos atividades de campo.</li>
-              <li>Essas ações ficam sob responsabilidade da equipe do aluno.</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-2">Entregamos</h4>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Documento do projeto.</li>
-              <li>Cronograma básico.</li>
-            </ul>
-          </div>
-        </div>
-      </DialogContent>
-    </Dialog>
-  ) : service.title === "Artigos Científicos" ? (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="hero" className="w-full">Saiba Mais</Button>
-      </DialogTrigger>
-      <DialogContent className="max-w-xl">
-        <DialogHeader>
-          <DialogTitle>Artigos Científicos — Como funciona</DialogTitle>
-          <DialogDescription></DialogDescription>
-        </DialogHeader>
-        <div className="space-y-6 text-foreground">
-          <div>
-            <h4 className="font-semibold mb-2">Orientamos você a</h4>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Estruturar o artigo conforme padrões científicos reconhecidos.</li>
-              <li>Selecionar e utilizar referências atualizadas e confiáveis.</li>
-              <li>Organizar introdução, metodologia, resultados e discussão de forma coesa.</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-2">Com a nossa orientação você terá</h4>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Um artigo formatado segundo normas acadêmicas.</li>
-              <li>Um material de apoio com referências revisadas e atuais.</li>
-            </ul>
-          </div>
-        </div>
-      </DialogContent>
-    </Dialog>
-  ) : (
-    <Button variant="hero" className="w-full">Saiba Mais</Button>
-  )}
-</div>
-
-
                 </CardContent>
               </Card>
             );
@@ -172,9 +95,12 @@ const Services = () => {
               Entre em contato conosco para discutir suas necessidades específicas. 
               Criamos soluções sob medida para cada projeto acadêmico.
             </p>
-            <Button variant="cta" size="lg" onClick={() => window.open('https://wa.me/61996212692','_blank')}>
+            <button
+              className="px-6 py-3 rounded-lg bg-secondary text-secondary-foreground font-semibold shadow hover:shadow-elegant transition"
+              onClick={() => window.open("https://wa.me/61996212692", "_blank")}
+            >
               Conversar com Especialista
-            </Button>
+            </button>
           </div>
         </div>
       </div>
