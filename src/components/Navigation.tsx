@@ -61,14 +61,16 @@ const Navigation = () => {
             >
               Sobre
             </button>
-            <button 
-              onClick={() => scrollToSection("contact")}
+            <a
+              href="https://wa.me/61996212692"
+              target="_blank"
+              rel="noreferrer"
               className={`text-sm font-medium transition-colors hover:text-primary ${
                 isScrolled ? "text-foreground" : "text-primary-foreground/90"
               }`}
             >
               Contato
-            </button>
+            </a>
             <Button 
               variant={isScrolled ? "hero" : "academic"} 
               size="sm"
@@ -108,12 +110,14 @@ const Navigation = () => {
               >
                 Sobre
               </button>
-              <button 
-                onClick={() => scrollToSection("contact")}
+              <a
+                href="https://wa.me/61996212692"
+                target="_blank"
+                rel="noreferrer"
                 className="block w-full text-left px-4 py-2 text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-colors"
               >
                 Contato
-              </button>
+              </a>
               <div className="px-4">
                 <Button 
                   variant="hero" 
