@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { BookOpen, Mail, Phone, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
+import { BookOpen, Mail, MapPin, Instagram } from "lucide-react";
+
 const Footer = () => {
-  return <footer className="bg-primary text-primary-foreground">
+  return (
+    <footer className="bg-primary text-primary-foreground">
       {/* Main Footer */}
       <div className="container mx-auto px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -19,20 +21,18 @@ const Footer = () => {
               Sua jornada educacional merece o melhor suporte.
             </p>
             <div className="flex gap-3">
-              <Button 
-                variant="ghost" 
-                size="icon" 
+              {/* Instagram: abre o perfil correto */}
+              <Button
+                variant="ghost"
+                size="icon"
                 className="w-8 h-8 text-primary-foreground/60 hover:text-primary-foreground hover:bg-primary-foreground/10"
-                onClick={() => window.open('https://wa.me/61996212692','_blank')}
+                onClick={() => window.open("https://www.instagram.com/textusacademico", "_blank")}
+                aria-label="Abrir Instagram Textus Acadêmico"
+                title="Instagram"
               >
                 <Instagram className="w-4 h-4" />
               </Button>
-              <Button variant="ghost" size="icon" className="w-8 h-8 text-primary-foreground/60 hover:text-primary-foreground hover:bg-primary-foreground/10">
-                <Facebook className="w-4 h-4" />
-              </Button>
-              <Button variant="ghost" size="icon" className="w-8 h-8 text-primary-foreground/60 hover:text-primary-foreground hover:bg-primary-foreground/10">
-                <Linkedin className="w-4 h-4" />
-              </Button>
+              {/* Facebook e LinkedIn removidos conforme solicitado */}
             </div>
           </div>
 
@@ -70,19 +70,19 @@ const Footer = () => {
                 <Mail className="w-4 h-4 flex-shrink-0" />
                 <span>Textusacademico@gmail.com</span>
               </div>
-              
+
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 flex-shrink-0" />
                 <span>São Paulo, SP</span>
               </div>
             </div>
-            
+
             <div className="pt-2">
-              <Button 
-                variant="secondary" 
-                size="sm" 
+              <Button
+                variant="secondary"
+                size="sm"
                 className="text-sm"
-                onClick={() => window.open('https://wa.me/61996212692','_blank')}
+                onClick={() => window.open("https://www.instagram.com/textusacademico", "_blank")}
               >
                 Solicitar Orçamento
               </Button>
@@ -110,6 +110,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
